@@ -10,3 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
       - uses: ./hello-world-docker-action
+        id: hello-action
+        with:
+          who-to-greet: nicruo
+      - run: echo ${{ steps.hello-action.outputs.time }}
+      
